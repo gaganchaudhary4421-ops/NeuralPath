@@ -6,7 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>NeuralPath — AI Learning Intelligence</title>
 
-    <!-- ♿ SEO + Screen Reader Meta -->
     <meta
       name="description"
       content="NeuralPath generates personalized AI learning paths tailored to your skill level, goals, and weekly availability. Fully accessible for screen readers and keyboard navigation."
@@ -20,7 +19,6 @@
     />
 
     <style>
-      /* ♿ Skip to main content link — hidden until focused */
       .skip-link {
         position: absolute;
         top: -100px;
@@ -42,13 +40,11 @@
         outline-offset: 2px;
       }
 
-      /* ♿ Global focus ring — visible for keyboard users */
       *:focus-visible {
         outline: 3px solid #4ade80 !important;
         outline-offset: 3px !important;
       }
 
-      /* ♿ Screen reader only utility */
       .sr-only {
         position: absolute;
         width: 1px;
@@ -61,7 +57,6 @@
         border: 0;
       }
 
-      /* ♿ Reduced motion — respect user OS preference */
       @media (prefers-reduced-motion: reduce) {
         *,
         *::before,
@@ -74,10 +69,8 @@
     </style>
   </head>
   <body>
-    <!-- ♿ Skip navigation link for keyboard/screen reader users -->
     <a href="#main-content" class="skip-link">Skip to main content</a>
 
-    <!-- ♿ Live region for dynamic announcements (loading, errors, results) -->
     <div
       id="aria-live-region"
       aria-live="polite"
@@ -85,7 +78,6 @@
       class="sr-only"
     ></div>
 
-    <!-- ♿ Assertive region for urgent announcements (errors) -->
     <div
       id="aria-alert-region"
       aria-live="assertive"
