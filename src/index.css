@@ -1,0 +1,64 @@
+:root {
+  --g0: #020d06;
+  --g1: #041a0b;
+  --g2: #063316;
+  --g3: #0a4d21;
+  --g4: #0e6b2e;
+  --g5: #128a3b;
+  --g6: #1aad4a;
+  --g7: #2dd460;
+  --g8: #6ef29a;
+  --g9: #b8fad0;
+  --white: #f4fef7;
+  --white2: #e0f5e8;
+  --muted: #7ab592;
+  --font-head: 'Syne', sans-serif;
+  --font-body: 'DM Sans', sans-serif;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--g0);
+  color: var(--white);
+  font-family: var(--font-body);
+  overflow-x: hidden;
+  cursor: none;
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: var(--g1);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--g4);
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--g5);
+}
+
+/* Prevent text selection on UI elements */
+button {
+  cursor: none;
+}
+
+input, select, textarea {
+  cursor: none;
+}
+
+/* Selection color */
+::selection {
+  background: rgba(45, 212, 96, 0.3);
+  color: var(--white);
+}
