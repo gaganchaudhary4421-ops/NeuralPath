@@ -1,0 +1,31 @@
+{
+  "name": "neuralpath",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@google/generative-ai": "^0.24.1",
+    "@react-three/drei": "^9.111.3",
+    "@react-three/fiber": "^8.17.10",
+    "@remotion/player": "^4.0.290",
+    "framer-motion": "^11.18.2",
+    "lucide-react": "^0.460.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-router-dom": "^7.17.0",
+    "recharts": "^3.8.1",
+    "remotion": "^4.0.290",
+    "three": "^0.168.0"
+  },
+  "devDependencies": {
+    "@types/react": "^18.3.12",
+    "@types/react-dom": "^18.3.1",
+    "@vitejs/plugin-react": "^6.0.2",
+    "vite": "^8.0.16"
+  }
+}
