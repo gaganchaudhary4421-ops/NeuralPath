@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>NeuralPath — AI Learning Intelligence</title>
+
+    <!-- ♿ SEO + Screen Reader Meta -->
+    <meta
+      name="description"
+      content="NeuralPath generates personalized AI learning paths tailored to your skill level, goals, and weekly availability. Fully accessible for screen readers and keyboard navigation."
+    />
+    <meta name="theme-color" content="#0b3d1f" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      /* ♿ Skip to main content link — hidden until focused */
+      .skip-link {
+        position: absolute;
+        top: -100px;
+        left: 1rem;
+        background: #0b3d1f;
+        color: #ffffff;
+        padding: 0.75rem 1.5rem;
+        border-radius: 8px;
+        font-family: "DM Sans", sans-serif;
+        font-weight: 700;
+        font-size: 1rem;
+        text-decoration: none;
+        z-index: 9999;
+        transition: top 0.2s;
+      }
+      .skip-link:focus {
+        top: 1rem;
+        outline: 3px solid #4ade80;
+        outline-offset: 2px;
+      }
+
+      /* ♿ Global focus ring — visible for keyboard users */
+      *:focus-visible {
+        outline: 3px solid #4ade80 !important;
+        outline-offset: 3px !important;
+      }
+
+      /* ♿ Screen reader only utility */
+      .sr-only {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        padding: 0;
+        margin: -1px;
+        overflow: hidden;
+        clip: rect(0, 0, 0, 0);
+        white-space: nowrap;
+        border: 0;
+      }
+
+      /* ♿ Reduced motion — respect user OS preference */
+      @media (prefers-reduced-motion: reduce) {
+        *,
+        *::before,
+        *::after {
+          animation-duration: 0.01ms !important;
+          animation-iteration-count: 1 !important;
+          transition-duration: 0.01ms !important;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- ♿ Skip navigation link for keyboard/screen reader users -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <!-- ♿ Live region for dynamic announcements (loading, errors, results) -->
+    <div
+      id="aria-live-region"
+      aria-live="polite"
+      aria-atomic="true"
+      class="sr-only"
+    ></div>
+
+    <!-- ♿ Assertive region for urgent announcements (errors) -->
+    <div
+      id="aria-alert-region"
+      aria-live="assertive"
+      aria-atomic="true"
+      class="sr-only"
+    ></div>
+
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>
