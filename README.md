@@ -1,4 +1,4 @@
-# NeuralPath 🧠
+# NeuralPath
 
 ### AI-Powered Personalized Learning Path Generator
 
