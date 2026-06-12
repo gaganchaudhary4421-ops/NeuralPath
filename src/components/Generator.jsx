@@ -493,7 +493,6 @@ const SKILL_OPTIONS_BY_DOMAIN = {
     "Regulatory Affairs",
     "SPSS/R",
   ],
-  // ── India Academic ──
   "Class 10 — CBSE": [
     "Mathematics",
     "Science (Physics, Chemistry, Biology)",
@@ -642,7 +641,6 @@ const SKILL_OPTIONS_BY_DOMAIN = {
     "Current Affairs",
     "Physical Fitness",
   ],
-  // ── International Academic ──
   "SAT / ACT Prep": [
     "Math — Algebra",
     "Math — Advanced",
@@ -764,7 +762,6 @@ const SKILL_OPTIONS_BY_DOMAIN = {
     "Study Skills",
     "Presentation Skills",
   ],
-  // ── Creative ──
   "Graphic Design": [
     "Adobe Photoshop",
     "Adobe Illustrator",
@@ -857,7 +854,6 @@ const SKILL_OPTIONS_BY_DOMAIN = {
     "Sound Sync",
     "Character Animation",
   ],
-  // ── Law & Social ──
   "Law / LLB": [
     "Constitutional Law",
     "Contract Law",
@@ -1671,7 +1667,6 @@ function SkillSelector({ domain, activeSkills, setActiveSkills }) {
   );
 }
 
-// ── Week Video Card ───────────────────────────────────────────────
 function WeekVideoCard({ week, index }) {
   const [playing, setPlaying] = useState(false);
   const [embedUrl, setEmbedUrl] = useState(null);
@@ -1820,7 +1815,6 @@ function WeekVideoCard({ week, index }) {
   );
 }
 
-// ── Video Script Panel ────────────────────────────────────────────
 function VideoScriptPanel({ pathId, token }) {
   const [script, setScript] = useState("");
   const [loading, setLoading] = useState(false);
@@ -1975,7 +1969,6 @@ function VideoScriptPanel({ pathId, token }) {
   );
 }
 
-// ── Main Generator ────────────────────────────────────────────────
 export default function Generator() {
   const [name, setName] = useState("");
   const [goal, setGoal] = useState("");
@@ -2007,7 +2000,6 @@ export default function Generator() {
     }
   }, [result]);
 
-  // Called when resume is analyzed — pre-fills form fields
   const handleResumeAnalyzed = useCallback((data) => {
     if (data.name) setName(data.name);
     if (data.goal) setGoal(data.goal);
