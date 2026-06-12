@@ -20,7 +20,7 @@ const C = {
   errText: "#b91c1c",
 };
 
- const api = (path, token, opts = {}) =>
+const api = (path, token, opts = {}) =>
   fetch(`${BASE}${path}`, {
     ...opts,
     headers: {
@@ -46,7 +46,7 @@ function Badge({ children, color = C.brandPale, text = C.brand }) {
     </span>
   );
 }
-
+//button function
 function Btn({ children, onClick, disabled, variant = "primary", small }) {
   const [hov, setHov] = useState(false);
   const bg =
@@ -92,7 +92,7 @@ function Btn({ children, onClick, disabled, variant = "primary", small }) {
   );
 }
 
- function ExplainModal({ topic, explanation, onClose, loading }) {
+function ExplainModal({ topic, explanation, onClose, loading }) {
   return (
     <div
       onClick={onClose}
@@ -198,7 +198,6 @@ function Btn({ children, onClick, disabled, variant = "primary", small }) {
   );
 }
 
- 
 function QuizModal({ quiz, weekNumber, pathId, token, onClose, onResult }) {
   const [selected, setSelected] = useState({});
   const [submitted, setSubmitted] = useState(false);
@@ -224,7 +223,7 @@ function QuizModal({ quiz, weekNumber, pathId, token, onClose, onResult }) {
       });
       setResult(res);
       setSubmitted(true);
-      onResult(res);  
+      onResult(res);
     } catch (e) {
       console.error(e);
     } finally {
@@ -372,7 +371,7 @@ function QuizModal({ quiz, weekNumber, pathId, token, onClose, onResult }) {
                   fontSize: 28,
                 }}
               >
-                {result.score_pct >= 70 ? "🚀": ""}
+                {result.score_pct >= 70 ? "🚀" : ""}
               </div>
               <p
                 style={{
@@ -463,7 +462,7 @@ function QuizModal({ quiz, weekNumber, pathId, token, onClose, onResult }) {
   );
 }
 
- function WeekCard({
+function WeekCard({
   week,
   pathId,
   token,
@@ -729,7 +728,7 @@ function QuizModal({ quiz, weekNumber, pathId, token, onClose, onResult }) {
   );
 }
 
- function ReshuffleBanner({ message, onDone }) {
+function ReshuffleBanner({ message, onDone }) {
   const [visible, setVisible] = useState(true);
   if (!visible) return null;
   return (
@@ -784,7 +783,7 @@ function QuizModal({ quiz, weekNumber, pathId, token, onClose, onResult }) {
   );
 }
 
- export default function PathDetail({ path: initialPath, token, onBack }) {
+export default function PathDetail({ path: initialPath, token, onBack }) {
   const [path, setPath] = useState(initialPath);
   const [completedWeeks, setCompletedWeeks] = useState([]);
   const [quizHistory, setQuizHistory] = useState([]);
@@ -794,7 +793,7 @@ function QuizModal({ quiz, weekNumber, pathId, token, onClose, onResult }) {
   const pj = path.path_json || {};
   const weeks = pj.weeks || [];
 
-   useEffect(() => {
+  useEffect(() => {
     api(`/learning/path/${path.id}/progress`, token)
       .then((data) => {
         if (data.completed_weeks) setCompletedWeeks(data.completed_weeks);
@@ -803,7 +802,7 @@ function QuizModal({ quiz, weekNumber, pathId, token, onClose, onResult }) {
       .catch(console.error);
   }, [path.id]);
 
-   const saveProgress = (newCompletedWeeks, newQuizHistory) => {
+  const saveProgress = (newCompletedWeeks, newQuizHistory) => {
     api(`/learning/path/${path.id}/progress`, token, {
       method: "POST",
       body: JSON.stringify({
@@ -813,7 +812,7 @@ function QuizModal({ quiz, weekNumber, pathId, token, onClose, onResult }) {
     }).catch(console.error);
   };
 
-   const handleQuizComplete = (weekNumber, result) => {
+  const handleQuizComplete = (weekNumber, result) => {
     const newCompleted = [...new Set([...completedWeeks, weekNumber])];
     const newHistory = [...quizHistory, { weekNumber, ...result }];
 
@@ -827,7 +826,7 @@ function QuizModal({ quiz, weekNumber, pathId, token, onClose, onResult }) {
     }
   };
 
-   const handleExplain = async (weekNumber, topic) => {
+  const handleExplain = async (weekNumber, topic) => {
     setExplainState({ weekNumber, topic, loading: true, text: "" });
     try {
       const res = await api(`/learning/${path.id}/explain`, token, {
