@@ -1,4 +1,4 @@
-const BASE = "http://localhost:8000";
+const BASE = import.meta.env.VITE_API_BASE_URL || "http://localhost:8000";
 
 export const signup = (data) =>
   fetch(`${BASE}/auth/signup`, {
@@ -14,7 +14,7 @@ export const login = (data) =>
     body: JSON.stringify(data),
   }).then((r) => r.json());
 export const forgotPassword = (email) =>
-  fetch("http://localhost:8000/auth/forgot-password", {
+  fetch("${BASE}/auth/forgot-password", {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({ email }),
