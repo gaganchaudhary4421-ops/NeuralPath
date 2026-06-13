@@ -25,7 +25,7 @@ router = APIRouter(prefix="/auth", tags=["Password Reset"])
 
 GMAIL_USER = os.getenv("GMAIL_USER")
 GMAIL_APP_PASSWORD = os.getenv("GMAIL_APP_PASSWORD")
-FRONTEND_URL = os.getenv("FRONTEND_URL", "http://localhost:5173")
+FRONTEND_URL = os.getenv("FRONTEND_URL", "https://neural-path-gamma.vercel.app")
 TOKEN_EXPIRE_MINUTES = 15
 
 
