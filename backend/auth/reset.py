@@ -111,7 +111,7 @@ def forgot_password(body: ForgotPasswordRequest, db: Session = Depends(get_db)):
     db.add(reset_token)
     db.commit()
 
-    reset_link = f"{FRONTEND_URL}/reset-password?token={token}" #add live url for password reset
+    reset_link = f"{https://neural-path-gamma.vercel.app/}/reset-password?token={token}"  
     try:
         send_reset_email(body.email, reset_link)
     except Exception as e:
