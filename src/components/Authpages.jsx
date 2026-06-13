@@ -356,7 +356,8 @@ export function LoginPage() {
         return;
       }
       localStorage.setItem("np_token", data.access_token);
-      navigate(redirectTo, { replace: true });
+
+      navigate("/dashboard", { replace: true });
     } catch {
       setError("Something went wrong. Please try again.");
     } finally {
