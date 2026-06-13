@@ -9,4 +9,4 @@ python-jose[cryptography]
 google-genai
 pydantic[email]
 python-multipart
-reportlab
+reportlabpyMuPDF
