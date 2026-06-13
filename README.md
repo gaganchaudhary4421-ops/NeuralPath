@@ -79,7 +79,6 @@ DB_PASSWORD=yourpassword
 DB_NAME=learningpath_db
 GMAIL_USER=your@gmail.com
 GMAIL_APP_PASSWORD=your_app_password
-FRONTEND_URL=http://localhost:5173
 JWT_SECRET=your_jwt_secret
 JWT_ALGORITHM=HS256
 JWT_EXPIRE_MINUTES=10080
