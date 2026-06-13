@@ -1246,7 +1246,10 @@ function ResumeUpload({ onAnalyzed }) {
       formData.append("file", f);
 
       const response = await fetch(
-        "http://localhost:8000/learning/analyze-resume",
+        '${import.meta.env.VITE_API_BASE_URL || "https://localhost:8000"}' /
+          learning /
+          analyze -
+          resume,
         {
           method: "POST",
           headers: { Authorization: `Bearer ${token}` },
