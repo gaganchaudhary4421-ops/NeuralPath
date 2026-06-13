@@ -55,8 +55,8 @@ function HomePage() {
 }
 
 function ProtectedRoute({ children }) {
-  const user = localStorage.getItem("np_token");
-  const isLoggedIn = user && user !== "null";
+  const token = localStorage.getItem("np_token");
+
   if (!isLoggedIn) return <Navigate to="/login" replace />;
   return children;
 }
@@ -70,7 +70,14 @@ export default function App() {
         <Route path="/" element={<HomePage />} />
         <Route path="/login" element={<LoginPage />} />
         <Route path="/signup" element={<SignupPage />} />
-        <Route path="/dashboard" element={<Dashboard />} />
+        <Route
+          path="/dashboard"
+          element={
+            <ProtectedRoute>
+              <Dashboard />
+            </ProtectedRoute>
+          }
+        />
         <Route path="/forgot-password" element={<ForgotPasswordPage />} />
 
         <Route path="*" element={<Navigate to="/" replace />} />
