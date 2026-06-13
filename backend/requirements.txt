@@ -11,3 +11,4 @@ pydantic[email]
 python-multipart
 reportlab
 PyMuPDF
+groq
