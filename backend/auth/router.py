@@ -70,7 +70,7 @@ def forgot_password(body: ForgotPasswordRequest, db: Session = Depends(get_db)):
         return {"detail": "ok"}
 
     token = create_access_token({"sub": str(user.id), "type": "reset"}, expires_minutes=15)
-    reset_link = f"http://localhost:5173/reset-password?token={token}"#add live url for password reset  
+    reset_link = f"https://neural-path-gamma.vercel.app/reset-password?token={token}"#add live url for password reset  
 
     EMAIL_FROM = os.getenv("GMAIL_USER")        
     EMAIL_PASS = os.getenv("GMAIL_APP_PASSWORD")  
