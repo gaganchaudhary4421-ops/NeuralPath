@@ -10,7 +10,7 @@ export const api = (path, token, opts = {}) =>
     },
   }).then((r) => r.json());
 export const generatePath = (data, token) =>
-  fetch(`${BASE}/api/learning/generate`, {
+  fetch(`${BASE}/api/learning/generate/`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
