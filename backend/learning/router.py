@@ -292,7 +292,7 @@ def fix_resources(path_json: dict, goal: str = "", focus: str = "") -> dict:
     return path_json
 # ── Routes  
 
-@router.post("/generate", response_model=LearningPathResponse, status_code=status.HTTP_201_CREATED)
+@router.post("/generate/", response_model=LearningPathResponse, status_code=status.HTTP_201_CREATED)
 def generate_path(
     body: GenerateRequest,
     db: Session = Depends(get_db),
