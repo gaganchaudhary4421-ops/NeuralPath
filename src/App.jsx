@@ -57,7 +57,7 @@ function HomePage() {
 function ProtectedRoute({ children }) {
   const token = localStorage.getItem("np_token");
 
-  if (!isLoggedIn) return <Navigate to="/login" replace />;
+  if (!token) return <Navigate to="/login" replace />;
   return children;
 }
 
