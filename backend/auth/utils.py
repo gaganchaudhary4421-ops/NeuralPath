@@ -16,7 +16,7 @@ print(f"[utils] JWT_SECRET loaded: {'YES (custom)' if JWT_SECRET != 'changeme' e
 pwd_context = CryptContext(schemes=["bcrypt"], deprecated="auto")
 
 def hash_password(password: str) -> str:
-    return pwd_context.hash(password)
+    return pwd_context.hash(password[:72])
 
 
 def verify_password(plain: str, hashed: str) -> bool:
