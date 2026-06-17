@@ -10,7 +10,7 @@ export const api = (path, token, opts = {}) =>
     },
   }).then((r) => r.json());
 export const generatePath = (data, token) =>
-  fetch(`${BASE}/api/learning/generate/`, {
+  fetch(`${BASE}/learning/generate/`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -20,7 +20,7 @@ export const generatePath = (data, token) =>
   }).then((r) => r.json());
 
 export const generateVideoScript = (pathId, token) =>
-  fetch(`${BASE}/api/learning/generate-video-script/${pathId}`, {
+  fetch(`${BASE}/learning/generate-video-script/${pathId}`, {
     method: "POST",
     headers: { Authorization: `Bearer ${token}` },
   }).then((r) => r.json());
