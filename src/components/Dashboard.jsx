@@ -1731,11 +1731,11 @@ export default function Dashboard() {
       });
     getDashboard(token)
       .then((data) => {
+        console.log("Dashboard data :", data);
         if (Array.isArray(data)) setPathCount(data.length);
-        else if (data?.paths) setPathCount(data.paths.length);
-        else if (data?.count) setPathCount(data.count);
       })
-      .catch(() => {});
+      .catch((err) => console.error("Dashboard error:", err));
+    h(() => {});
     const headers = { Authorization: `Bearer ${token}` };
 
     fetch(
