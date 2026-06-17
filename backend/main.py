@@ -24,8 +24,10 @@ app = FastAPI(
 @app.on_event("startup")
 async def show_routes():
     for route in app.routes:
-        print(f"  {route.methods if hasattr(route, 'methods') else '---'} {route.path}")
-        
+        path =  getattr(route, "path", N/A)
+        methods = getattr(route, "methods", "---")
+        print(f"{methods} {path}")
+         
 with engine.connect() as conn:
     try:
         conn.execute(text("ALTER TABLE learning_paths ADD COLUMN completed_weeks JSON"))
