@@ -1732,6 +1732,8 @@ export default function Dashboard() {
     getDashboard(token)
       .then((data) => {
         if (Array.isArray(data)) setPathCount(data.length);
+        else if (data?.paths) setPathCount(data.paths.length);
+        else if (data?.count) setPathCount(data.count);
       })
       .catch(() => {});
     const headers = { Authorization: `Bearer ${token}` };
