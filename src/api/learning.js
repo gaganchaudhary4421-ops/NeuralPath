@@ -25,7 +25,7 @@ export const generateVideoScript = (pathId, token) =>
     headers: { Authorization: `Bearer ${token}` },
   }).then((r) => r.json());
 export const getDashboard = (token) =>
-  fetch(`${BASE}/learning/dashboard/`, {
+  fetch(`${BASE}/learning/dashboard`, {
     headers: { Authorization: `Bearer ${token}` },
   }).then((r) => r.json());
 export const deletePath = (id, token) =>
