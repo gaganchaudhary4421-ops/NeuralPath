@@ -24,7 +24,7 @@ app = FastAPI(
 @app.on_event("startup")
 async def show_routes():
     for route in app.routes:
-        path =  getattr(route, "path", N/A)
+        path =  getattr(route, "path", None)
         methods = getattr(route, "methods", "---")
         print(f"{methods} {path}")
          
