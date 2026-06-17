@@ -732,9 +732,12 @@ function Progress({ token }) {
 
   useEffect(() => {
     if (!token) return;
-    fetch(`'${import.meta.env.VITE_API_BASE_URL || "https://localhost:8000"}'/learning/progress/stats`, {
-      headers: { Authorization: `Bearer ${token}` },
-    })
+    fetch(
+      `${import.meta.env.VITE_API_BASE_URL || "https://localhost:8000"}/learning/progress/stats`,
+      {
+        headers: { Authorization: `Bearer ${token}` },
+      },
+    )
       .then((r) => r.json())
       .then((data) => {
         setStats(data);
@@ -1733,12 +1736,18 @@ export default function Dashboard() {
       .catch(() => {});
     const headers = { Authorization: `Bearer ${token}` };
 
-    fetch(`${import.meta.env.VITE_API_BASE_URL || "https://localhost:8000"}/skills/count`, { headers })
+    fetch(
+      `${import.meta.env.VITE_API_BASE_URL || "https://localhost:8000"}/skills/count`,
+      { headers },
+    )
       .then((r) => r.json())
       .then((d) => setSkillCount(d.count ?? 0))
       .catch(() => {});
 
-    fetch(`${import.meta.env.VITE_API_BASE_URL || "https://localhost:8000"}/resources/saved/count`, { headers })
+    fetch(
+      `${import.meta.env.VITE_API_BASE_URL || "https://localhost:8000"}/resources/saved/count`,
+      { headers },
+    )
       .then((r) => r.json())
       .then((d) => setResourceCount(d.count ?? 0))
       .catch(() => {});
