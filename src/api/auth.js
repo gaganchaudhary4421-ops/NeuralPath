@@ -1,4 +1,4 @@
-const BASE = import.meta?.env?.VITE_API_BASE_URL || "https://localhost:8000";
+const BASE = `${import.meta.env.VITE_API_BASE_URL || "https://localhost:8000"}`;
 
 export const signup = (data) =>
   fetch(`${BASE}/auth/signup`, {
