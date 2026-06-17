@@ -11,7 +11,8 @@ from pydantic import BaseModel
 import smtplib
 from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
-
+from sendgrid import SendGridAPIClient
+from sendgrid.helpers.mail import Mail
 import os
 
 load_dotenv(dotenv_path=Path(__file__).resolve().parent.parent / ".env")
@@ -118,14 +119,15 @@ def forgot_password(body: ForgotPasswordRequest, db: Session = Depends(get_db)):
         </div>
         """
 
-        msg.attach(MIMEText(html, "html"))
-
-        with smtplib.SMTP_SSL("smtp.gmail.com", 587) as smtp:
-            smtp.starttls()
-            smtp.login(EMAIL_FROM, EMAIL_PASS)
-            smtp.send_message(msg)
-
-        print("DEBUG → Email sent successfully!")
+        sg_message =SGMail (
+            from_email=EMAIL_FROM,
+            to_emails=email,
+            subject="Reset your NeuralPath password",
+            html_content=html
+        )
+        sg = sendgrid.SendGridAPIClient(api_key=os.getenv("SENDGRID_API_KEY"))
+        sg.client.mail.send.post(request_body=sg_message.get())
+        print("DEBUG → Reset email sent successfully")
 
     except smtplib.SMTPAuthenticationError:
         print("DEBUG → SMTP Auth failed — wrong email or app password")
