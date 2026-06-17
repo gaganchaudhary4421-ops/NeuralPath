@@ -46,7 +46,7 @@ app.add_middleware(
 
 app.include_router(auth_router)
 app.include_router(reset_router) 
-app.include_router(learning_router, prefix="/api/learning", tags=["Learning"])
+app.include_router(learning_router, prefix="/learning", tags=["Learning"])
 app.include_router(extra_router)
 
 print("\n=== REGISTERED ROUTES ===")
