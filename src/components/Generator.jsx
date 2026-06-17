@@ -2271,10 +2271,10 @@ export default function Generator() {
                   value={duration}
                   onChange={(e) => setDuration(e.target.value)}
                 >
-                  <option>4 weeks — Sprint</option>
-                  <option>8 weeks — Standard</option>
-                  <option>12 weeks — Deep Dive</option>
-                  <option>24 weeks — Full Transformation</option>
+                  <option value="4">4 weeks — Sprint</option>
+                  <option value="8">8 weeks — Standard</option>
+                  <option value="12">12 weeks — Deep Dive</option>
+                  <option value="24">24 weeks — Full Transformation</option>
                 </select>
               </div>
             </div>
