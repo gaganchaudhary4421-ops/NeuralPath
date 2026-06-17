@@ -35,7 +35,7 @@ def signup(body: SignupRequest, db: Session = Depends(get_db)):
     user = User(
         name=body.name,
         email=body.email,
-        hashed_password=hash_password(body.password),
+        hashed_password=hash_password(body.password[:72]),
     )
     db.add(user)
     db.commit()
