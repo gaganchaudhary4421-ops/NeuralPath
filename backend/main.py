@@ -39,7 +39,7 @@ app.add_middleware(
     allow_origins=[
         "http://localhost:5173",    
         "http://localhost:3000",  
-        "https://neural-path-gamma.vercel.app",   //add frontend url for cors
+        "https://neural-path-gamma.vercel.app",   #add frontend url for cors
     ],
     allow_credentials=True,
     allow_methods=["*"],
