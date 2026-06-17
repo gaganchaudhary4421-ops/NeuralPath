@@ -11,8 +11,9 @@ from pydantic import BaseModel
 import smtplib
 from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
+import sendgrid
 from sendgrid import SendGridAPIClient
-from sendgrid.helpers.mail import Mail
+from sendgrid.helpers.mail import Mail as SGMail
 import os
 
 load_dotenv(dotenv_path=Path(__file__).resolve().parent.parent / ".env")
