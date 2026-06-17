@@ -1,0 +1,8 @@
+{
+  "rewrites": [
+    {
+      "source": "/api/:path*",
+      "destination": "https://elegant-achievement-production-f641.up.railway.app"
+    }
+  ]
+}
