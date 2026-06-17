@@ -1731,7 +1731,7 @@ export default function Dashboard() {
       });
     getDashboard(token)
       .then((data) => {
-        console.log("Dashboard data :", data);
+        console.log("Dashboard data :", data); //
         if (Array.isArray(data)) setPathCount(data.length);
       })
       .catch((err) => console.error("Dashboard error:", err));
