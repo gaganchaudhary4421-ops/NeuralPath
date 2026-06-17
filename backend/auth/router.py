@@ -120,7 +120,8 @@ def forgot_password(body: ForgotPasswordRequest, db: Session = Depends(get_db)):
 
         msg.attach(MIMEText(html, "html"))
 
-        with smtplib.SMTP_SSL("smtp.gmail.com", 465) as smtp:
+        with smtplib.SMTP_SSL("smtp.gmail.com", 587) as smtp:
+            smtp.starttls()
             smtp.login(EMAIL_FROM, EMAIL_PASS)
             smtp.send_message(msg)
 
