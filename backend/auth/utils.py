@@ -15,7 +15,6 @@ print(f"[utils] JWT_SECRET loaded: {'YES (custom)' if JWT_SECRET != 'changeme' e
 
 pwd_context = CryptContext(schemes=["bcrypt"], deprecated="auto")
 
-password = password[:72]  # bcrypt has a max length of 72 bytes
 def hash_password(password: str) -> str:
     return pwd_context.hash(password)
 
