@@ -81,8 +81,9 @@ export default function Navbar() {
 
   const handleStartLearning = () => {
     setMenuOpen(false);
+    const user = localStorage.getItem("np_user");
     const token = localStorage.getItem("np_token");
-    const isLoggedIn = !!token;
+    const isLoggedIn = (user && user !== "null") || !!token;
     if (isLoggedIn) {
       scrollTo("generator");
     } else {
