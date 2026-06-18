@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import Dashboard from "./Dashboard";
 
 const DARK_GREEN = "#0b3d1f";
 const MID_GREEN = "#145a2e";
@@ -82,8 +81,8 @@ export default function Navbar() {
 
   const handleStartLearning = () => {
     setMenuOpen(false);
-    const user = localStorage.getItem("np_user");
-    const isLoggedIn = user && user !== "null";
+    const token = localStorage.getItem("np_token");
+    const isLoggedIn = !!token;
     if (isLoggedIn) {
       scrollTo("generator");
     } else {
@@ -96,7 +95,6 @@ export default function Navbar() {
     ["features", "Features"],
     ["generator", "Generate"],
     ["how", "How it works"],
-    ["Dashboard", "Dashboard"],
   ];
 
   return (
