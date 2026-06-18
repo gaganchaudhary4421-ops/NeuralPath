@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import Dashboard from "./Dashboard";
 
 const DARK_GREEN = "#0b3d1f";
 const MID_GREEN = "#145a2e";
@@ -95,6 +96,7 @@ export default function Navbar() {
     ["features", "Features"],
     ["generator", "Generate"],
     ["how", "How it works"],
+    ["Dashboard", "Dashboard"],
   ];
 
   return (
